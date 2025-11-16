@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>La Seconde Vie Decathlon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ----- RESET SIMPLE ----- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    /* ----- HEADER ----- */
+    header {
+      background: #007dbc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* --------- AJOUT : LOGO --------- */
+    .logo-container {
+      margin-bottom: 15px;
+    }
+
+    .logo-container img {
+      width: 150px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* ----- CONTENEUR PRINCIPAL ----- */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    /* ----- SECTION À PROPOS ----- */
+    .about {
+      background: white;
+      padding: 20px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .about h2 {
+      color: #007dbc;
+      margin-bottom: 10px;
+    }
+
+    /* ----- BARRE DE FILTRE ----- */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .filter-btn.active {
+      background: #007dbc;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* ----- GRILLE DE PRODUITS ----- */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 10px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .product-info p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #f0f0f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px 30px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- ------- AJOUT : LOGO DECATHLON ------- -->
+    <div class="logo-container">
+      <img src="images/logo-decathlon.png" alt="Logo Decathlon">
+    </div>
+    <h1>La Seconde Vie Decathlon</h1>
+    <p>Donnez une nouvelle vie aux vélos, rollers et skateboards.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ------- AJOUT : SECTION À PROPOS -------- -->
+    <section class="about">
+      <h2>À propos de la Seconde Vie Décathlon</h2>
+      <p>
+        Chez Décathlon, notre mission est de rendre le sport accessible au plus grand nombre. 
+        La Seconde Vie va encore plus loin : elle permet de prolonger la durée de vie des produits 
+        sportifs grâce à la reprise, au reconditionnement et à la revente de matériel en excellent état.
+      </p>
+      <p style="margin-top:10px;">
+        Cela permet :
+        <ul style="margin-left:20px; margin-top:5px;">
+          <li>✔ de réduire les déchets sportifs,</li>
+          <li>✔ d’offrir une alternative durable et économique,</li>
+          <li>✔ de s’équiper à prix réduit en toute confiance.</li>
+        </ul>
+      </p>
+    </section>
+
+    <!-- ----- FILTRES ----- -->
+    <section class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="velo">Vélos</button>
+      <button class="filter-btn" data-filter="roller">Rollers</button>
+      <button class="filter-btn" data-filter="skateboard">Skateboards</button>
+    </section>
+
+    <!-- ----- GRILLE DES PRODUITS ----- -->
+    <section class="product-grid">
+
+      <!-- Vélo 1 -->
+      <article class="product-card" data-category="velo">
+        <div class="product-image">
+          <img src="images/vélo1.webp" alt="Vélo seconde vie 1">
+        </div>
+        <div class="product-info">
+          <h3>Vélo urbain seconde vie</h3>
+          <p>Idéal pour les trajets quotidiens en ville.</p>
+          <span class="tag">Vélo</span>
+        </div>
+      </article>
+
+      <!-- Vélo 2 -->
+      <article class="product-card" data-category="velo">
+        <div class="product-image">
+          <img src="images/vélo2.jpg" alt="Vélo seconde vie 2">
+        </div>
+        <div class="product-info">
+          <h3>Vélo tout-terrain reconditionné</h3>
+          <p>Parfait pour les balades nature et chemins.</p>
+          <span class="tag">Vélo</span>
+        </div>
+      </article>
+
+      <!-- Roller 1 -->
+      <article class="product-card" data-category="roller">
+        <div class="product-image">
+          <img src="images/Rollers1.jpg" alt="Roller seconde vie 1">
+        </div>
+        <div class="product-info">
+          <h3>Rollers fitness seconde vie</h3>
+          <p>Pour débuter ou reprendre le roller en toute confiance.</p>
+          <span class="tag">Roller</span>
+        </div>
+      </article>
+
+      <!-- Roller 2 -->
+      <article class="product-card" data-category="roller">
+        <div class="product-image">
+          <img src="images/Rollers2.jpg" alt="Roller seconde vie 2">
+        </div>
+        <div class="product-info">
+          <h3>Rollers street reconditionnés</h3>
+          <p>Adaptés aux sessions plus techniques en ville.</p>
+          <span class="tag">Roller</span>
+        </div>
+      </article>
+
+      <!-- Skateboard 1 -->
+      <a href="fiche-skateboard-street.html" style="text-decoration:none; color:inherit;">
+  <article class="product-card" data-category="skateboard">
+    <div class="product-image">
+      <img src="images/Skate1.jpg" alt="Skateboard seconde vie 1">
+    </div>
+    <div class="product-info">
+      <h3>Skateboard street seconde vie</h3>
+      <p>Pour s’initier aux figures en skatepark.</p>
+      <span class="tag">Skateboard</span>
+    </div>
+  </article>
+</a>
+
+
+      <!-- Skateboard 2 -->
+      <article class="product-card" data-category="skateboard">
+        <div class="product-image">
+          <img src="images/Skate2.jpg" alt="Skateboard seconde vie 2">
+        </div>
+        <div class="product-info">
+          <h3>Longboard reconditionné</h3>
+          <p>Stable et confortable pour les longues balades.</p>
+          <span class="tag">Skateboard</span>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 - La Seconde Vie Decathlon – Prototype étudiant.
+  </footer>
+
+  <!-- ----- SCRIPT FILTRE ----- -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+
+          if (filterValue === 'all' || filterValue === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
