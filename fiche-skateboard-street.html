@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skateboard Street – Fiche Produit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #007dbc;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* --- Logo Décathlon --- */
+    .logo-container {
+      margin-bottom: 10px;
+    }
+
+    .logo-container img {
+      width: 150px;   /* Ajuste la taille ici si tu veux plus petit */
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 350px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      color: #007dbc;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    /* --- Bouton Ajouter au panier --- */
+    .btn-panier {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 18px;
+      background: #ff8c00; /* orange style e-commerce */
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn-panier:hover {
+      background: #e67a00;
+      transform: scale(1.03);
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 16px;
+      background: #007dbc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .btn-retour:hover {
+      background: #005f8a;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <!-- -------- Logo Décathlon ajouté -------- -->
+  <div class="logo-container">
+    <img src="images/logo-decathlon.png" alt="Logo Décathlon">
+  </div>
+
+  <h1>Skateboard Street – Seconde Vie</h1>
+</header>
+
+<div class="container">
+
+  <!-- IMAGE DU PRODUIT -->
+  <div class="product-img">
+    <img src="images/Skate1.jpg" alt="Skateboard street seconde vie">
+  </div>
+
+  <!-- INFORMATIONS PRODUIT -->
+  <h2>Skateboard Street Reconditionné</h2>
+  <p>
+    Ce skateboard street seconde vie a été entièrement vérifié et reconditionné par nos équipes Décathlon.
+    Idéal pour débuter ou progresser en skatepark, il allie solidité, maniabilité et design urbain.
+  </p>
+
+  <h3>Caractéristiques :</h3>
+  <ul>
+    <li>✓ Plateau 7 plis bois d’érable</li>
+    <li>✓ Roues 54 mm polyvalentes</li>
+    <li>✓ Trucks en aluminium renforcé</li>
+    <li>✓ Grip anti-dérapant changé</li>
+    <li>✓ Contrôlé et certifié par Décathlon</li>
+  </ul>
+
+  <p class="price">Prix : 45€</p>
+
+  <!-- -------- Bouton Ajouter au panier -------- -->
+  <a href="#" class="btn-panier">🛒 Ajouter au panier</a>
+
+  <!-- -------- Bouton retour -------- -->
+  <br>
+  <a href="Hackathon1.html" class="btn-retour">← Retour au catalogue</a>
+
+</div>
+
+</body>
+</html>
